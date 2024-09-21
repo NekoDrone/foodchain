@@ -41,4 +41,4 @@ To be added when questions arise.
 # Acknowledgements
 
 1. [Open Government Products](https://open.gov.sg), for organising Build for Good, and providing the opportunity to create products for public good.
-2. [Adan Vielma](https://www.open.gov.sg/people/adan), [LinkedIn](https://www.linkedin.com/in/adan-vielma/) for mentoring, and pushing us to build a better product.
+2. [Adan Vielma](https://www.open.gov.sg/people/adan) ([LinkedIn](https://www.linkedin.com/in/adan-vielma/)) for mentoring, and pushing us to build a better product.
