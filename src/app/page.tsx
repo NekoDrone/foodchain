@@ -1,7 +1,16 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useSearchParams } from "next/navigation";
+import { MealPlanner } from "@/components/MealPlanner";
+
+const Home = () => {
+  const searchParams = useSearchParams();
+
   return (
-    <p>Welcome to Foodchain!</p>
+    <div className="flex min-h-screen flex-col items-center justify-center">
+      <MealPlanner />
+    </div>
   );
-}
+};
+
+export default Home;
