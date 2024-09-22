@@ -1,19 +1,23 @@
 import { FoodType } from "@/shared/entities";
-import { FC, useState } from "react";
+import { Dispatch, FC, SetStateAction } from "react";
 import Image from "next/image";
 
 interface CategoryProps {
   category: FoodType;
-  handleCategoryComplete: (foodType: FoodType) => void;
+  setShowCategory: Dispatch<SetStateAction<FoodType | undefined>>;
+  isGreyedOut: boolean;
 }
 
 const IMAGE_SIZE = 200;
 
 export const FoodCategory: FC<CategoryProps> = ({
   category,
-  handleCategoryComplete,
+  setShowCategory,
+  isGreyedOut,
 }) => {
-  const [greyedOut, setGreyedOut] = useState(false);
+  const handleClick = () => {
+    setShowCategory(category);
+  };
 
   return (
     <>
@@ -22,6 +26,8 @@ export const FoodCategory: FC<CategoryProps> = ({
         alt={category}
         height={IMAGE_SIZE}
         width={IMAGE_SIZE}
+        onClick={handleClick}
+        className={"" + (isGreyedOut ? "grayscale" : "")}
       />
     </>
   );
