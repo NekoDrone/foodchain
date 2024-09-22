@@ -22,9 +22,9 @@ export const Plate: FC<PlateProps> = ({ carb, protein, vegFruit }) => {
         height={IMAGE_SIZE}
         width={IMAGE_SIZE}
       />
-      {!carb ?? <FoodSlot food={carb} />}
-      {!protein ?? <FoodSlot food={protein} />}
-      {!vegFruit ?? <FoodSlot food={vegFruit} />}
+      {carb && <FoodSlot food={carb} />}
+      {protein && <FoodSlot food={protein} />}
+      {vegFruit && <FoodSlot food={vegFruit} />}
     </div>
   );
 };
