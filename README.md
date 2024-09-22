@@ -2,6 +2,8 @@
 
 [Build for Good](https://build.gov.sg) 2024 submission for team [foodchain](https://www.build.gov.sg/foodchain/)
 
+You can visit the project [here](https://masak-foodchain.vercel.app/)!
+
 # Setup
 
 The project is built in [Next.js](https://nextjs.org/) with a Python backend (separate repo).
