@@ -1,11 +1,11 @@
 "use client";
 
-import { FoodItem } from "@/shared/entities";
+import { FoodData } from "@/shared/entities";
 import { FC } from "react";
 import Image from "next/image";
 
 interface FoodSlotProps {
-  food: FoodItem;
+  food: FoodData;
 }
 
 export const FoodSlot: FC<FoodSlotProps> = ({ food }) => {

@@ -10,7 +10,7 @@ export enum MealTimes {
   Dinner = "dinner",
 }
 
-export interface FoodItem {
+export interface FoodData {
   name: string;
   imageLink?: string;
 }

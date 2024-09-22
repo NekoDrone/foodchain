@@ -1,14 +1,14 @@
 "use client";
 
 import { FC } from "react";
-import { FoodItem } from "@/shared/entities";
-import { FoodSlot } from "@/components/FoodSlot";
+import { FoodData } from "@/shared/entities";
 import Image from "next/image";
+import { FoodSlot } from "@/components/Plate/FoodSlot";
 
 interface PlateProps {
-  carb?: FoodItem;
-  protein?: FoodItem;
-  vegFruit?: FoodItem;
+  carb?: FoodData;
+  protein?: FoodData;
+  vegFruit?: FoodData;
 }
 
 const IMAGE_SIZE = 750;
