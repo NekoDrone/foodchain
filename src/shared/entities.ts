@@ -13,6 +13,8 @@ export enum MealTimes {
 export interface FoodData {
   name: string;
   imageLink?: string;
+  isHealthy: boolean;
+  category: FoodType;
 }
 
 export interface ParamsProps {
