@@ -1,7 +1,7 @@
 export enum FoodType {
-  MeatProtein = "meatProtein",
-  Carbs = "carbs",
-  VegFruit = "vegFruit",
+  MeatProtein = "protein",
+  Carbs = "carbohydrates",
+  VegFruit = "fruits-vegetables",
 }
 
 export enum MealTimes {
