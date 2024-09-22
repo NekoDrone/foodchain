@@ -1,5 +1,5 @@
-import { FoodTypes } from "@/shared/entities";
-import { FC } from "react";
+import { FoodType } from "@/shared/entities";
+import { FC, useState } from "react";
 import Image from "next/image";
 
 interface CategoryProps {
@@ -9,7 +9,12 @@ interface CategoryProps {
 
 const IMAGE_SIZE = 200;
 
-export const FoodCategory: FC<CategoryProps> = ({ category, handleCategoryComplete }) => {
+export const FoodCategory: FC<CategoryProps> = ({
+  category,
+  handleCategoryComplete,
+}) => {
+  const [greyedOut, setGreyedOut] = useState(false);
+
   return (
     <>
       <Image
