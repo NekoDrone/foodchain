@@ -3,12 +3,13 @@ import { FC } from "react";
 import Image from "next/image";
 
 interface CategoryProps {
-  category: FoodTypes;
+  category: FoodType;
+  handleCategoryComplete: (foodType: FoodType) => void;
 }
 
 const IMAGE_SIZE = 200;
 
-export const FoodCategory: FC<CategoryProps> = ({ category }) => {
+export const FoodCategory: FC<CategoryProps> = ({ category, handleCategoryComplete }) => {
   return (
     <>
       <Image
