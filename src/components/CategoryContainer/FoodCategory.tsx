@@ -28,7 +28,7 @@ export const FoodCategory: FC<CategoryProps> = ({
         height={IMAGE_SIZE}
         width={IMAGE_SIZE}
         onClick={handleClick}
-        className={"" + (isDisabled ? "grayscale" : "")}
+        className={"cursor-pointer" + (isDisabled ? " grayscale" : "")}
       />
     </>
   );

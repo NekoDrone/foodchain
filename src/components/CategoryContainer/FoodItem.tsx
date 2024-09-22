@@ -23,6 +23,7 @@ export const FoodItem: FC<FoodItemProps> = ({ food, handleCompletion }) => {
       height={IMAGE_SIZE}
       width={IMAGE_SIZE}
       onClick={handleClick}
+      className="cursor-pointer"
     />
   );
 };
