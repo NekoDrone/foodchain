@@ -1,5 +1,5 @@
 import { FoodData, FoodType } from "@/shared/entities";
-import { FC, useMemo, useState } from "react";
+import { FC, useState } from "react";
 import { FoodCategory } from "@/components/CategoryContainer/FoodCategory";
 import { getMocks } from "@/shared/mocks";
 import { FoodItem } from "@/components/CategoryContainer/FoodItem";
@@ -28,32 +28,28 @@ export const SelectionContainer: FC<SelectionContainerProps> = ({
     handleFoodSelection(food);
   };
 
-  const foodCategories = useMemo(() => {
-    return Object.values(FoodType).map((foodType) => {
-      const isGreyedOut = completed.includes(foodType);
-      return (
-        <FoodCategory
-          category={foodType}
-          key={foodType}
-          setShowCategory={setShowCategory}
-          isGreyedOut={isGreyedOut}
-        />
-      );
-    });
-  }, []);
+  const foodCategories = Object.values(FoodType).map((foodType) => {
+    const isDisabled = completed.includes(foodType);
+    return (
+      <FoodCategory
+        category={foodType}
+        key={foodType}
+        setShowCategory={setShowCategory}
+        isDisabled={isDisabled}
+      />
+    );
+  });
 
-  const foodItems = useMemo(() => {
-    const foods = getMocks(showCategory ?? FoodType.Carbs);
-    return foods.map((food) => {
-      return (
-        <FoodItem
-          food={food}
-          key={food.name}
-          handleCompletion={completeCategory}
-        />
-      );
-    });
-  }, [showCategory]);
+  const foods = getMocks(showCategory ?? FoodType.Carbs);
+  const foodItems = foods.map((food) => {
+    return (
+      <FoodItem
+        food={food}
+        key={food.name}
+        handleCompletion={completeCategory}
+      />
+    );
+  });
 
   return <>{showCategory ? foodItems : foodCategories}</>;
 };

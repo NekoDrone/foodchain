@@ -5,7 +5,7 @@ import Image from "next/image";
 interface CategoryProps {
   category: FoodType;
   setShowCategory: Dispatch<SetStateAction<FoodType | undefined>>;
-  isGreyedOut: boolean;
+  isDisabled: boolean;
 }
 
 const IMAGE_SIZE = 200;
@@ -13,9 +13,10 @@ const IMAGE_SIZE = 200;
 export const FoodCategory: FC<CategoryProps> = ({
   category,
   setShowCategory,
-  isGreyedOut,
+  isDisabled,
 }) => {
   const handleClick = () => {
+    if (isDisabled) return;
     setShowCategory(category);
   };
 
@@ -27,7 +28,7 @@ export const FoodCategory: FC<CategoryProps> = ({
         height={IMAGE_SIZE}
         width={IMAGE_SIZE}
         onClick={handleClick}
-        className={"" + (isGreyedOut ? "grayscale" : "")}
+        className={"" + (isDisabled ? "grayscale" : "")}
       />
     </>
   );
