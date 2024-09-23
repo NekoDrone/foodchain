@@ -24,7 +24,27 @@ export const Plate: FC<PlateProps> = ({ selectedFoods }) => {
   const fruitVeg = fruitVegKvp && fruitVegKvp[1];
 
   return (
-    <div>
+    <div className="relative">
+      <div className="absolute inset-0">
+        {carbs && (
+          <FoodSlot
+            food={carbs}
+            className="absolute left-[40%] top-[45%] z-20 scale-110"
+          />
+        )}
+        {fruitVeg && (
+          <FoodSlot
+            food={fruitVeg}
+            className="absolute left-[10%] top-[30%] z-10 scale-110"
+          />
+        )}
+        {protein && (
+          <FoodSlot
+            food={protein}
+            className="absolute left-[40%] top-[10%] z-0 scale-110 overflow-clip"
+          />
+        )}
+      </div>
       <Image
         src="/assets/images/plate.webp"
         alt="plate"
@@ -32,26 +52,6 @@ export const Plate: FC<PlateProps> = ({ selectedFoods }) => {
         width={IMAGE_SIZE}
         className="-z-10"
       />
-      <div className="relative">
-        {carbs && (
-          <FoodSlot
-            food={carbs}
-            className="absolute left-80 top-[-26rem] z-20"
-          />
-        )}
-        {fruitVeg && (
-          <FoodSlot
-            food={fruitVeg}
-            className="absolute left-24 top-[-30rem] z-10 scale-110"
-          />
-        )}
-        {protein && (
-          <FoodSlot
-            food={protein}
-            className="absolute left-72 top-[-40rem] z-0 scale-125"
-          />
-        )}
-      </div>
     </div>
   );
 };
