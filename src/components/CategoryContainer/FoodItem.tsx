@@ -7,7 +7,7 @@ interface FoodItemProps {
   handleCompletion: (food: FoodData) => void;
 }
 
-const IMAGE_SIZE = 175;
+const IMAGE_SIZE = 250;
 
 export const FoodItem: FC<FoodItemProps> = ({ food, handleCompletion }) => {
   const { name, imageLink } = food;

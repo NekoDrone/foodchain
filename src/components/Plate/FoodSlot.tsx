@@ -19,8 +19,6 @@ export const FoodSlot: FC<FoodSlotProps> = ({ food, className }) => {
     className,
   ].join(" ");
 
-  console.log(name, imageLink);
-
   return (
     <div className={cssStrings}>
       {imageLink ? (
@@ -33,7 +31,6 @@ export const FoodSlot: FC<FoodSlotProps> = ({ food, className }) => {
       ) : (
         <p>{name}</p>
       )}
-      ;
     </div>
   );
 };
