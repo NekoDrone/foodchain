@@ -24,7 +24,7 @@ export const Report: FC<ReportProps> = ({ selectedFoods }) => {
         <ReportPlate selectedFoods={selectedFoods} />
         <NutritionReadout selectedFoods={selectedFoods} />
       </div>
-      <div>
+      <div className="flex flex-col items-center justify-center gap-12">
         <Replacements selectedFoods={selectedFoods} />
       </div>
     </div>

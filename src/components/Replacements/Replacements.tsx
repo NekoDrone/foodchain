@@ -15,7 +15,7 @@ export const Replacements: FC<ReplacementsProps> = ({ selectedFoods }) => {
   } = selectedFoods;
 
   return (
-    <div className="rounded-3xl bg-[#f7f7f7cc] stroke-2 p-4 outline outline-[10px] outline-[#f7f7f7]">
+    <div className="rounded-3xl bg-[#f7f7f7cc] stroke-2 p-24 pb-12 pt-12 outline outline-[10px] outline-[#f7f7f7]">
       {!selectedCarbs.isHealthy && (
         <ReplacementItem
           healthy={MOCK_HEALTHY.carbs}
