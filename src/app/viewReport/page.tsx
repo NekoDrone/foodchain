@@ -3,6 +3,7 @@
 import { useSearchParams } from "next/navigation";
 import { ReportWithNotif } from "@/components/Report/ReportWithNotif";
 import { ReportFromStorage } from "@/components/Report/ReportFromStorage";
+import { Suspense } from "react";
 
 const ReportPage = () => {
   const searchParams = useSearchParams();
@@ -15,4 +16,12 @@ const ReportPage = () => {
   );
 };
 
-export default ReportPage;
+const ReportSuspense = () => {
+  return (
+    <Suspense>
+      <ReportPage />
+    </Suspense>
+  );
+};
+
+export default ReportSuspense;
