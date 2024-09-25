@@ -12,7 +12,7 @@ export const NutritionReadoutItem: FC<ItemProps> = ({ type, value }) => {
 
   return (
     <div className="flex items-center p-1">
-      <strong className="w-32">{capitaliseString(type)}</strong>
+      <strong className="w-36">{capitaliseString(type)}</strong>
       <DottedLine />
       <p className="pl-3">{Math.round(value)}</p>
       <p className="pl-1">{unit}</p>
