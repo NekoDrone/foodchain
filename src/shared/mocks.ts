@@ -3,25 +3,25 @@ import { FoodData, FoodType } from "@/shared/entities";
 export const MOCK_CARBOHYDRATES: FoodData[] = [
   {
     name: "beehoon",
-    imageLink: "/assets/images/foods/carbohydrates/beehoon.webp",
+    imageLink: "/assets/images/foods/carbs/beehoon.webp",
     isHealthy: false,
     category: FoodType.Carbs,
   },
   {
     name: "brownrice",
-    imageLink: "/assets/images/foods/carbohydrates/brownrice.webp",
+    imageLink: "/assets/images/foods/carbs/brownrice.webp",
     isHealthy: true,
     category: FoodType.Carbs,
   },
   {
     name: "porridge",
-    imageLink: "/assets/images/foods/carbohydrates/porridge.webp",
+    imageLink: "/assets/images/foods/carbs/porridge.webp",
     isHealthy: false,
     category: FoodType.Carbs,
   },
   {
     name: "whiterice",
-    imageLink: "/assets/images/foods/carbohydrates/whiterice.webp",
+    imageLink: "/assets/images/foods/carbs/whiterice.webp",
     isHealthy: true,
     category: FoodType.Carbs,
   },
@@ -57,25 +57,25 @@ export const MOCK_PROTEIN: FoodData[] = [
 export const MOCK_FRUITVEG: FoodData[] = [
   {
     name: "broccoli",
-    imageLink: "/assets/images/foods/fruits-vegetables/broccoli.webp",
+    imageLink: "/assets/images/foods/fruitVeg/broccoli.webp",
     isHealthy: true,
     category: FoodType.VegFruit,
   },
   {
     name: "cabbage",
-    imageLink: "/assets/images/foods/fruits-vegetables/cabbage.webp",
+    imageLink: "/assets/images/foods/fruitVeg/cabbage.webp",
     isHealthy: false,
     category: FoodType.VegFruit,
   },
   {
     name: "longbeans",
-    imageLink: "/assets/images/foods/fruits-vegetables/longbeans.webp",
+    imageLink: "/assets/images/foods/fruitVeg/longbeans.webp",
     isHealthy: false,
     category: FoodType.VegFruit,
   },
   {
     name: "xiaobaicai",
-    imageLink: "/assets/images/foods/fruits-vegetables/xiaobaicai.webp",
+    imageLink: "/assets/images/foods/fruitVeg/xiaobaicai.webp",
     isHealthy: false,
     category: FoodType.VegFruit,
   },

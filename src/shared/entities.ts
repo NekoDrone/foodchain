@@ -1,7 +1,7 @@
 export enum FoodType {
   MeatProtein = "protein",
-  Carbs = "carbohydrates",
-  VegFruit = "fruits-vegetables",
+  Carbs = "carbs",
+  VegFruit = "fruitVeg",
 }
 
 export enum MealTimes {
@@ -15,12 +15,4 @@ export interface FoodData {
   imageLink?: string;
   isHealthy: boolean;
   category: FoodType;
-}
-
-export interface ParamsProps {
-  params: MealParams;
-}
-
-export interface MealParams {
-  meal: string;
 }

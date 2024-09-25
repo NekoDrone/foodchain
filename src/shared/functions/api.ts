@@ -48,7 +48,7 @@ export interface ApiNotificationsResult extends ApiBaseResult {
 }
 
 export interface NotificationFoodData {
-  carb: FoodData;
+  carbs: FoodData;
   protein: FoodData;
   fruitVeg: FoodData;
 }
