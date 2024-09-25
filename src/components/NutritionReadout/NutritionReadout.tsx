@@ -10,16 +10,13 @@ interface ReadoutProps {
 export const NutritionReadout: FC<ReadoutProps> = ({ selectedFoods }) => {
   const { carbs, fruitVeg, protein } = selectedFoods;
 
-  if (carbs == undefined || fruitVeg == undefined || protein == undefined)
-    return <></>;
-
   const totalInfo: NutritionInfo = [
     carbs.nutritionInfo,
     fruitVeg.nutritionInfo,
     protein.nutritionInfo,
   ].reduce((acc, curr) => {
     for (const key of Object.keys(curr)) {
-      // @ts-ignore: Because we are using type casting magic to dynamically access each key value pair.
+      // @ts-expect-error: Because we are using type casting magic to dynamically access each key value pair.
       acc[key] += curr[key];
     }
     return acc;
@@ -28,7 +25,7 @@ export const NutritionReadout: FC<ReadoutProps> = ({ selectedFoods }) => {
   const types = Object.values(NutritionTypes) as NutritionTypes[];
 
   return (
-    <div className="grid items-center justify-center align-middle">
+    <div className="grid items-center justify-center text-lg">
       {types.map((type) => {
         console.log(type, totalInfo[type]);
         return (
