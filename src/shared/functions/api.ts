@@ -149,9 +149,9 @@ export const useNotificationQuery = (notificationId: string) => {
 
 export const registerNewNotification = async (
   mobile: string,
-  foodData: NotificationFoodData,
+  selectedFoods: NotificationFoodData,
 ) => {
-  const body: ApiNotificationRequest = { mobile, message: foodData };
+  const body: ApiNotificationRequest = { mobile, message: selectedFoods };
   const req = new Request(`${API_BASE_URL}/${ApiEndpoints.Notifications}/`, {
     method: "POST",
     body: JSON.stringify(body),
