@@ -25,7 +25,6 @@ export const MealPlanner = () => {
     newState[food.category] = food;
     if (finishedAddingFood(newState)) {
       sessionStorage.setItem("selectedFoods", JSON.stringify(newState));
-      console.log("redirecting!!");
       router.replace("/viewReport");
     } //params?
     else setSelectedFoods(newState);
@@ -42,6 +41,5 @@ export const MealPlanner = () => {
 };
 
 const finishedAddingFood = (selectedFoods: SelectedFoodState) => {
-  console.log("finished?", Object.values(selectedFoods));
   return !Object.values(selectedFoods).includes(undefined);
 };
