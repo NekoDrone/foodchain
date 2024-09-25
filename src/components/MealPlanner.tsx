@@ -34,7 +34,7 @@ export const MealPlanner = () => {
   return (
     <div className="flex min-h-fit min-w-fit items-center justify-center gap-16 align-middle">
       <Plate selectedFoods={selectedFoods} />
-      <div className="max-w grid max-h-screen w-[200px] auto-rows-max grid-rows-3 justify-between gap-8 overflow-scroll align-middle">
+      <div className="grid max-h-screen w-[200px] auto-rows-max grid-rows-3 justify-between gap-8 overflow-scroll align-middle">
         <SelectionContainer handleFoodSelection={addFoodToSelection} />
       </div>
     </div>
