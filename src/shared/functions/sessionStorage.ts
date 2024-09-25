@@ -5,7 +5,7 @@ export const useSessionStorage = (key: string) => {
 
   useEffect(() => {
     setValue(sessionStorage.getItem(key) ?? "");
-  }, []);
+  }, [key]);
 
   return value;
 };
