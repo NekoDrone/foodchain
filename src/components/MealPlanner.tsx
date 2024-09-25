@@ -4,6 +4,7 @@ import { Plate } from "@/components/Plate/Plate";
 import { SelectionContainer } from "@/components/CategoryContainer/SelectionContainer";
 import { FoodData, FoodType } from "@/shared/entities";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 type SelectedFoodState = {
   [value in FoodType]: FoodData | undefined;
@@ -17,10 +18,17 @@ export const MealPlanner = () => {
 
   const [selectedFoods, setSelectedFoods] = useState(initialSelected);
 
+  const router = useRouter();
+
   const addFoodToSelection = (food: FoodData) => {
     const newState = structuredClone(selectedFoods);
     newState[food.category] = food;
-    setSelectedFoods(newState);
+    if (finishedAddingFood(newState)) {
+      sessionStorage.setItem("selectedFoods", JSON.stringify(newState));
+      console.log("redirecting!!");
+      router.replace("/viewReport");
+    } //params?
+    else setSelectedFoods(newState);
   };
 
   return (
@@ -31,4 +39,9 @@ export const MealPlanner = () => {
       </div>
     </div>
   );
+};
+
+const finishedAddingFood = (selectedFoods: SelectedFoodState) => {
+  console.log("finished?", Object.values(selectedFoods));
+  return !Object.values(selectedFoods).includes(undefined);
 };
