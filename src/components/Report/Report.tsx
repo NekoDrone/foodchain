@@ -11,13 +11,12 @@ interface ReportProps {
 
 export const Report: FC<ReportProps> = ({ selectedFoods }) => {
   return (
-    <div className="flex min-h-fit min-w-fit items-center justify-center gap-16 align-middle">
-      <ReportPlate selectedFoods={selectedFoods} />
-    </div>
     <>
       <div className="grid min-h-fit min-w-fit items-center justify-center gap-16 align-middle">
         <ReportPlate selectedFoods={selectedFoods} />
+        <NutritionReadout selectedFoods={selectedFoods} />
       </div>
+      <div></div>
     </>
   );
 };
