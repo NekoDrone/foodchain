@@ -1,7 +1,7 @@
 "use client";
 
-const ViewReportPage = () => {
+const ReportPage = () => {
   return <></>;
 };
 
-export default ViewReportPage;
+export default ReportPage;
