@@ -1,4 +1,5 @@
 import { FoodData, FoodType } from "@/shared/entities";
+import { NotificationFoodData } from "@/shared/functions/api";
 
 export const MOCK_CARBOHYDRATES: FoodData[] = [
   {
@@ -49,7 +50,7 @@ export const MOCK_CARBOHYDRATES: FoodData[] = [
   {
     name: "whiterice",
     imageLink: "/assets/images/foods/carbs/whiterice.webp",
-    isHealthy: true,
+    isHealthy: false,
     category: FoodType.Carbs,
     nutritionInfo: {
       calories: 180.6,
@@ -188,6 +189,54 @@ export const MOCK_FRUITVEG: FoodData[] = [
     },
   },
 ];
+
+export const MOCK_HEALTHY = {
+  carbs: {
+    name: "brownrice",
+    imageLink: "/assets/images/foods/carbs/brownrice.webp",
+    isHealthy: true,
+    category: FoodType.Carbs,
+    nutritionInfo: {
+      calories: 150.2,
+      fat: 3.5,
+      protein: 10.8,
+      calcium: 98.6,
+      iron: 1.0,
+      carbohydrates: 22.0,
+      sugar: 3.1,
+    },
+  },
+  protein: {
+    name: "steamchicken",
+    imageLink: "/assets/images/foods/protein/steamchicken.webp",
+    isHealthy: true,
+    category: FoodType.MeatProtein,
+    nutritionInfo: {
+      calories: 310.7,
+      fat: 13.0,
+      protein: 22.6,
+      calcium: 200.7,
+      iron: 2.1,
+      carbohydrates: 30.9,
+      sugar: 5.9,
+    },
+  },
+  fruitVeg: {
+    name: "broccoli",
+    imageLink: "/assets/images/foods/fruitVeg/broccoli.webp",
+    isHealthy: true,
+    category: FoodType.VegFruit,
+    nutritionInfo: {
+      calories: 140.0,
+      fat: 3.3,
+      protein: 9.2,
+      calcium: 70.6,
+      iron: 1.1,
+      carbohydrates: 21.7,
+      sugar: 3.0,
+    },
+  },
+} as NotificationFoodData;
 
 export const getMocks = (foodType: FoodType): FoodData[] => {
   switch (foodType) {
