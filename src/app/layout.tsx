@@ -4,16 +4,17 @@ import "./globals.css";
 import { Mandali } from "next/font/google";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { ReactNode } from "react";
 
 const mandali = Mandali({ weight: "400", subsets: ["latin"] });
 
 const queryClient = new QueryClient();
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
-  children: React.ReactNode;
-}>) {
+  children: ReactNode;
+}>) => {
   return (
     <html lang="en">
       <head>
@@ -29,4 +30,6 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
