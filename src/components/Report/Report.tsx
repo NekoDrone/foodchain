@@ -5,6 +5,7 @@ import { NotificationFoodData } from "@/shared/functions/api";
 import { ReportPlate } from "@/components/Report/ReportPlate";
 import { NutritionReadout } from "@/components/NutritionReadout/NutritionReadout";
 import { Replacements } from "@/components/Replacements/Replacements";
+import { ReportRemindMe } from "@/components/Report/ReportRemindMe";
 
 interface ReportProps {
   selectedFoods: NotificationFoodData;
@@ -26,6 +27,7 @@ export const Report: FC<ReportProps> = ({ selectedFoods }) => {
       </div>
       <div className="flex flex-col items-center justify-center gap-12">
         <Replacements selectedFoods={selectedFoods} />
+        <ReportRemindMe />
       </div>
     </div>
   );
