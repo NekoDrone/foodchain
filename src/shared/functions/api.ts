@@ -47,10 +47,10 @@ export interface ApiNotificationsResult extends ApiBaseResult {
   url: string;
 }
 
-interface NotificationFoodData {
-  food1: FoodData;
-  food2: FoodData;
-  food3: FoodData;
+export interface NotificationFoodData {
+  carb: FoodData;
+  protein: FoodData;
+  fruitVeg: FoodData;
 }
 
 const API_BASE_URL = process.env.API_BASE_URL ?? "";
