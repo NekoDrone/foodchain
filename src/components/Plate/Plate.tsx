@@ -41,7 +41,7 @@ export const Plate: FC<PlateProps> = ({ selectedFoods }) => {
         {protein && (
           <FoodSlot
             food={protein}
-            className="absolute left-[40%] top-[10%] z-0 scale-110 overflow-clip"
+            className="absolute left-[40%] top-[10%] z-0 scale-110"
           />
         )}
       </div>
