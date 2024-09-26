@@ -1,13 +1,9 @@
 "use client";
 
 import { useSessionStorage } from "@/shared/functions/sessionStorage";
-import {
-  NotificationFoodData,
-  registerNewNotification,
-} from "@/shared/functions/api";
+import { NotificationFoodData } from "@/shared/functions/api";
 import { ChangeEvent, useState } from "react";
 import Image from "next/image";
-import { Simulate } from "react-dom/test-utils";
 import { useRouter } from "next/navigation";
 
 export const ReminderForm = () => {
