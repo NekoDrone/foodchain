@@ -5,6 +5,7 @@ import { SelectionContainer } from "@/components/CategoryContainer/SelectionCont
 import { FoodData, FoodType } from "@/shared/entities";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import _ from "lodash";
 
 type SelectedFoodState = {
   [value in FoodType]: FoodData | undefined;
@@ -21,7 +22,7 @@ export const MealPlanner = () => {
   const router = useRouter();
 
   const addFoodToSelection = (food: FoodData) => {
-    const newState = structuredClone(selectedFoods);
+    const newState = _.cloneDeep<SelectedFoodState>(selectedFoods);
     newState[food.category] = food;
     if (finishedAddingFood(newState)) {
       sessionStorage.setItem("selectedFoods", JSON.stringify(newState));
