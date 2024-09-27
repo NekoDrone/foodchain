@@ -1,7 +1,10 @@
 "use client";
 
 import { useSessionStorage } from "@/shared/functions/sessionStorage";
-import { NotificationFoodData } from "@/shared/functions/api";
+import {
+  NotificationFoodData,
+  registerNewNotification,
+} from "@/shared/functions/api";
 import { ChangeEvent, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -28,7 +31,7 @@ export const ReminderForm = () => {
     const formData = e.get("mobile");
     if (formData == null || formData == "") return;
     const mobile = "+65" + formData;
-    // await registerNewNotification(mobile, selectedFoods);
+    await registerNewNotification(mobile, selectedFoods);
     console.log(`Registered new number ${mobile}`);
     router.replace("/remind/confirm");
   };
