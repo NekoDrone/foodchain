@@ -63,7 +63,9 @@ enum ApiEndpoints {
 }
 
 const getCategories = async () => {
-  const req = new Request(`${API_BASE_URL}/${ApiEndpoints.Categories}/`);
+  const req = new Request(`${API_BASE_URL}/${ApiEndpoints.Categories}/`, {
+    mode: "cors",
+  });
   const res = await fetch(req);
   const { results } = (await res.json()) as ApiResult<ApiCategoryResult>;
   results.id = extractCategoryId(results.url);
@@ -84,7 +86,9 @@ export const useCategoriesQuery = () => {
 };
 
 const getFoodList = async () => {
-  const req = new Request(`${API_BASE_URL}/${ApiEndpoints.Foods}/`);
+  const req = new Request(`${API_BASE_URL}/${ApiEndpoints.Foods}/`, {
+    mode: "cors",
+  });
   const res = await fetch(req);
   const { results } = (await res.json()) as ApiResult<ApiFoodResult[]>;
   return results;
@@ -99,7 +103,9 @@ export const useFoodListQuery = () => {
 };
 
 const getFood = async (id: string) => {
-  const req = new Request(`${API_BASE_URL}/${ApiEndpoints.Foods}/${id}/`);
+  const req = new Request(`${API_BASE_URL}/${ApiEndpoints.Foods}/${id}/`, {
+    mode: "cors",
+  });
   const res = await fetch(req);
   const { results } = (await res.json()) as ApiResult<ApiFoodResult>;
   return results;
@@ -116,6 +122,7 @@ export const useFoodItemQuery = (id: string) => {
 const getFoodReplacements = async (id: string) => {
   const req = new Request(
     `${API_BASE_URL}/${ApiEndpoints.Foods}/${id}/${ApiEndpoints.Replacements}`,
+    { mode: "cors" },
   );
   const res = await fetch(req);
   const { results } = (await res.json()) as ApiResult<ApiReplacementsResult>;
@@ -133,6 +140,7 @@ export const useFoodReplacementsQuery = (id: string) => {
 const getNotificationMessage = async (notificationId: string) => {
   const req = new Request(
     `${API_BASE_URL}/${ApiEndpoints.Notifications}/${notificationId}/`,
+    { mode: "cors" },
   );
   const res = await fetch(req);
   const { results } = (await res.json()) as ApiResult<ApiNotificationsResult>;
@@ -153,6 +161,7 @@ export const registerNewNotification = async (
 ) => {
   const body: ApiNotificationRequest = { mobile, message: selectedFoods };
   const req = new Request(`${API_BASE_URL}/${ApiEndpoints.Notifications}/`, {
+    mode: "cors",
     method: "POST",
     body: JSON.stringify(body),
   });
