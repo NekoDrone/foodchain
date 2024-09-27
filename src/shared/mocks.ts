@@ -49,7 +49,7 @@ export const MOCK_CARBOHYDRATES: FoodData[] = [
   },
   {
     name: "whiterice",
-    imageLink: "/assets/images/foods/carbs/whiterice.webp",
+    imageLink: "/assets/images/foods/carbs/grain_rice.webp",
     isHealthy: false,
     category: FoodType.Carbs,
     nutritionInfo: {
@@ -112,7 +112,7 @@ export const MOCK_PROTEIN: FoodData[] = [
   },
   {
     name: "tofu",
-    imageLink: "/assets/images/foods/protein/tofu.webp",
+    imageLink: "/assets/images/foods/protein/grain_tofu.webp",
     isHealthy: false,
     category: FoodType.MeatProtein,
     nutritionInfo: {
@@ -130,7 +130,7 @@ export const MOCK_PROTEIN: FoodData[] = [
 export const MOCK_FRUITVEG: FoodData[] = [
   {
     name: "broccoli",
-    imageLink: "/assets/images/foods/fruitVeg/broccoli.webp",
+    imageLink: "/assets/images/foods/fruitVeg/grain_broccoli.webp",
     isHealthy: true,
     category: FoodType.VegFruit,
     nutritionInfo: {
@@ -144,8 +144,8 @@ export const MOCK_FRUITVEG: FoodData[] = [
     },
   },
   {
-    name: "cabbage",
-    imageLink: "/assets/images/foods/fruitVeg/cabbage.webp",
+    name: "taukee",
+    imageLink: "/assets/images/foods/fruitVeg/grain_taukee.webp",
     isHealthy: false,
     category: FoodType.VegFruit,
     nutritionInfo: {
