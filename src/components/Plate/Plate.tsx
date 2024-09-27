@@ -9,11 +9,12 @@ interface PlateProps {
   selectedFoods: {
     [value in FoodType]?: FoodData;
   };
+  removeFood: (food: FoodData) => void;
 }
 
 const IMAGE_SIZE = 750;
 
-export const Plate: FC<PlateProps> = ({ selectedFoods }) => {
+export const Plate: FC<PlateProps> = ({ selectedFoods, removeFood }) => {
   const foods = Object.entries(selectedFoods);
   const carbsKvp = foods.find(([key]) => key == FoodType.Carbs);
   const proteinKvp = foods.find(([key]) => key == FoodType.MeatProtein);
@@ -30,18 +31,21 @@ export const Plate: FC<PlateProps> = ({ selectedFoods }) => {
           <FoodSlot
             food={carbs}
             className="absolute left-[40%] top-[45%] z-20 scale-110"
+            removeFood={removeFood}
           />
         )}
         {fruitVeg && (
           <FoodSlot
             food={fruitVeg}
             className="absolute left-[10%] top-[30%] z-10 scale-110"
+            removeFood={removeFood}
           />
         )}
         {protein && (
           <FoodSlot
             food={protein}
             className="absolute left-[40%] top-[10%] z-0 scale-110"
+            removeFood={removeFood}
           />
         )}
       </div>
