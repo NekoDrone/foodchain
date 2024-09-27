@@ -3,33 +3,29 @@ import { FC, useState } from "react";
 import { FoodCategory } from "@/components/CategoryContainer/FoodCategory";
 import { getMocks } from "@/shared/mocks";
 import { FoodItem } from "@/components/CategoryContainer/FoodItem";
+import { SelectedFoodState } from "@/components/MealPlanner";
 
 interface SelectionContainerProps {
   handleFoodSelection: (food: FoodData) => void;
+  selectedFoods: SelectedFoodState
 }
 
 export const SelectionContainer: FC<SelectionContainerProps> = ({
   handleFoodSelection,
+  selectedFoods
 }) => {
   const initialShowCategory = undefined;
   const [showCategory, setShowCategory] = useState(
     initialShowCategory as FoodType | undefined,
   );
 
-  const initialCompleted: FoodType[] = [];
-
-  const [completed, setCompleted] = useState(initialCompleted);
-
   const completeCategory = (food: FoodData) => {
-    const newState = [...completed];
-    newState.push(food.category);
-    setCompleted(newState);
     setShowCategory(undefined);
     handleFoodSelection(food);
   };
 
-  const foodCategories = Object.values(FoodType).map((foodType) => {
-    const isDisabled = completed.includes(foodType);
+  const foodCategories = Object.values(FoodType).map((foodType: FoodType) => {
+    const isDisabled = selectedFoods[foodType] != undefined;
     return (
       <FoodCategory
         category={foodType}

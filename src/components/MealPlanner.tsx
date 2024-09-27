@@ -7,7 +7,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import _ from "lodash";
 
-type SelectedFoodState = {
+export type SelectedFoodState = {
   [value in FoodType]: FoodData | undefined;
 };
 
@@ -41,7 +41,7 @@ export const MealPlanner = () => {
     <div className="flex min-h-fit min-w-fit items-center justify-center gap-16 align-middle">
       <Plate selectedFoods={selectedFoods} removeFood={removeFromSelection} />
       <div className="grid max-h-screen w-[200px] auto-rows-max grid-rows-3 justify-between gap-8 overflow-scroll align-middle">
-        <SelectionContainer handleFoodSelection={addFoodToSelection} />
+        <SelectionContainer handleFoodSelection={addFoodToSelection} selectedFoods={selectedFoods}/>
       </div>
     </div>
   );
