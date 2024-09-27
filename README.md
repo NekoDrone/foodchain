@@ -1,6 +1,6 @@
 # Masak
 
-[Build for Good](https://build.gov.sg) 2024 submission for team [foodchain](https://www.build.gov.sg/foodchain/)
+[Build for Good](https://build.gov.sg) 2024 submission for team [Foodchain](https://www.build.gov.sg/foodchain/)
 
 You can visit the project [here](https://masak-foodchain.vercel.app/)!
 
