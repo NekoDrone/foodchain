@@ -7,7 +7,7 @@ import Image from "next/image";
 interface FoodSlotProps {
   food: FoodData;
   className?: string;
-  removeFood: (food: FoodData) => void;
+  removeFood?: (food: FoodData) => void;
 }
 
 const IMAGE_SIZE = 350;
@@ -21,7 +21,7 @@ export const FoodSlot: FC<FoodSlotProps> = ({ food, className, removeFood }) => 
   ].join(" ");
   
   const handleClick = () => {
-    removeFood(food)
+    if(removeFood) removeFood(food)
   }
 
   return (
