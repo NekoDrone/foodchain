@@ -19,7 +19,7 @@ const ReportPage = () => {
 const ReportSuspense = () => {
   return (
     <Suspense>
-      <div className="flex min-h-screen flex-col items-center justify-center align-middle">
+      <div className="flex min-h-screen flex-col items-center justify-center align-middle scale-[88%]">
         <ReportPage />
       </div>
     </Suspense>

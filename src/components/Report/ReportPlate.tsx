@@ -25,19 +25,19 @@ export const ReportPlate: FC<ReportPlateProps> = ({ selectedFoods }) => {
         {carbs && (
           <FoodSlot
             food={carbs}
-            className="absolute right-[-15%] top-[25%] z-20 scale-[60%]"
+            className="absolute right-[-15%] top-[25%] z-20 scale-[50%]"
           />
         )}
         {fruitVeg && (
           <FoodSlot
             food={fruitVeg}
-            className="absolute left-[-10%] top-[32%] z-10 scale-75"
+            className="absolute left-[-10%] top-[32%] z-10 scale-[70%]"
           />
         )}
         {protein && (
           <FoodSlot
             food={protein}
-            className="absolute left-[23%] top-[10%] z-0 scale-75"
+            className="absolute left-[23%] top-[10%] z-0 scale-[70%]"
           />
         )}
       </div>
