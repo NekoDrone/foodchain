@@ -163,6 +163,10 @@ export const registerNewNotification = async (
   const req = new Request(`${API_BASE_URL}/${ApiEndpoints.Notifications}/`, {
     mode: "cors",
     method: "POST",
+    headers: {
+      "Accept": "application/json, text/plain",
+      "Content-Type": "application/json;charset=UTF-8"
+    },
     body: JSON.stringify(body),
   });
   await fetch(req).then((response) => {
