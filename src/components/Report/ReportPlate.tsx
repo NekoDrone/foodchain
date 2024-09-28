@@ -31,7 +31,7 @@ export const ReportPlate: FC<ReportPlateProps> = ({ selectedFoods }) => {
         {fruitVeg && (
           <FoodSlot
             food={fruitVeg}
-            className="absolute left-[-10%] top-[32%] z-10 scale-[57%]"
+            className="absolute left-[-14%] top-[15%] z-10 scale-[57%]"
           />
         )}
         {protein && (
